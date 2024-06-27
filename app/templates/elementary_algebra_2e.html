@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" id="MathJax-script" async></script>
+
+  <title>Math Problems</title>
+</head>
+<body>
+  <a href="/">Home</a>
+  <h1>Elementary Algebra 2e</h1>
+  <p>Select a math concept to practice:</p>
+  <ul>
+    <li><a href="{{ url_for('elementary_algebra_2e.place_value') }}">Ch. 1, Use Place Value with Whole Number</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.name_the_number') }}">Ch. 1, Name Each Number</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.number_to_digits') }}">Ch. 1, Write Each Number as a Whole Number Using Digits</a></li> 
+    <li><a href="{{ url_for('elementary_algebra_2e.round_to_place_value') }}">Ch. 1, Round Numbers to Indicated Place Value</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.identify_multiples_factors') }}">Ch. 1, Identify Multiples and Factors</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.prime_factorization') }}">Ch. 1, Find Prime Factorization</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.least_common_multiple') }}">Ch. 1, Find the Least Common Multiple</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.combine_like_terms') }}">Ch. 1, Combine Like Terms</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.evaluate_expression') }}">Ch. 1, Evaluate Expression</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.translate_and_simplify_expression') }}">Ch. 1, Use Place Value with Whole Number, Translate to an algebraic expression and simplify.</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.calculate_new_balance') }}">Ch. 1, Use Place Value with Whole Number, Calculate new account balance.</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.round_to_nearest_hundredth') }}">Ch. 1, Use Place Value with Whole Number, Round to the nearest hundredth.</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.convert_fraction_to_decimal') }}">Ch. 1, Use Place Value with Whole Number, Convert fraction to decimal.</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.convert_decimal_to_percent') }}">Ch. 1, Use Place Value with Whole Number, Convert decimal to percent.</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.simplify_expression_1') }}">Ch. 1, Solve Random Algebraic Expression 1</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.multiply_fractions') }}">Ch. 1, Multiply Two Fractions</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.divide_fractions') }}">Ch. 1, Divide Two Fractions</a></li>
+    <li><a href="{{ url_for('elementary_algebra_2e.simplify_fraction_expression') }}">Ch. 1, Simplify Fractional Algebraic Expression</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Add more math concepts here as needed -->
+  </ul>
+</body>
+</html>

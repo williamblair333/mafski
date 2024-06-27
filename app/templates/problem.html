@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" id="MathJax-script" async></script>
+  <title>Math Problems</title>
+</head>
+<body>
+  <a href="/">Home</a>
+
+  <div class="nav-arrows">
+  <a href="#" id="prevProblem" onclick="prevProblem()">&larr; Previous Problem</a>
+  <a href="#" id="nextProblem" onclick="nextProblem()">Next Problem &rarr;</a>
+  </div>
+
+  {% if 'box_and_whisker' in problem %}
+  <h1>Box-and-Whisker Plots Problem</h1>
+  <p>{{ problem|safe }}</p>
+{% else %}
+  <h1 id="problem">{{ problem|safe }}</h1>
+{% endif %}
+  
+  <button onclick="showAnswer()">Show Answer</button>
+  <button onclick="showExplanation()">Show Explanation</button>
+  <button onclick="window.location.reload();">Generate a new problem</button>
+  <div class="answer" id="answer" style="display:none;">{{ answer|safe }}</div>
+  <div class="explanation" id="explanation" style="display:none;">{{ explanation|safe }}</div>
+
+
+  <script>
+    function showAnswer() {
+      document.getElementById("answer").style.display = "block";
+    }
+    function showExplanation() {
+      document.getElementById("explanation").style.display = "block";
+    }
+  </script>
+  
+  <script>
+  const problemUrls = [
+  "/qr-1a1/mixed_numbers_ratio",
+  "/qr-1a1/whole_numbers_fraction_ratio",
+  "/qr-1a1/decimal_numbers_fraction_ratio",
+  "/qr-1a1/proportion_using_cpi",
+  "/qr-1a1/proportion_using_rates",
+  "/qr-1a1/proportion_rates_per_100k",
+  "/qr-1a1/proportional_comparison",
+  "/qr-1a1/mean_shark_attacks",
+  "/qr-1a1/mode_president_ages",
+  "/qr-1a1/median_worm_length",
+  "/qr-1a1/gpa_calculation",
+  "/qr-1a1/weighted_average_salary",
+  "/qr-1a1/weighted_average_items",
+  "/qr-1a1/weighted_average_grades",
+  "/qr-1a1/relative_change_watch",
+  "/qr-1a1/absolute_change_screen_time",
+  "/qr-1a1/percent_change_salary",
+  "/qr-1a1/percent_change_initial_price",
+  "/qr-1a1/percent_change_profit",
+  "/qr-1a1/slope_population_change",
+  "/qr-1a1/slope_saving_rate",
+  "/qr-1a1/slope_identify_y_intercept",
+  "/qr-1a1/slope_identify_m_temp_increase",
+  "/qr-1a1/slope_indentify_m_linear_model",
+  "/qr-1a1/linear_model_doughnuts_cost_model",
+  "/qr-1a1/non_exponential_functions",
+  "/qr-1a1/exponential_model_melatonin_decay",
+  "/qr-1a1/simple_interest",
+  "/qr-1a1/simple_interest_rate",
+  "/qr-1a1/simple_interest_deposit",
+  "/qr-1a1/compound_interest_deposit",
+  "/qr-1a1/compound_interest_random",
+  "/qr-1a1/credit_card_interest",
+  "/qr-1a1/credit_card_table",
+  "/qr-1a1/total_interest_paid",
+  "/qr-1a1/compare_mortgages",
+  "/qr-1a1/first_payment_balance_reduction",
+  "/qr-1a1/monthly_payment",
+  "/qr-1a1/mortgage_payment_table",
+  "/qr-1a1/liters_in_quarts",
+  "/qr-1a1/kilometers_to_miles",
+  "/qr-1a1/fahrenheit_to_celsius",
+  "/qr-1a1/pounds_to_kilograms",
+  "/qr-1a1/meters_to_feet",
+  "/qr-1a1/thermometer_temp_conversion",
+  "/qr-1a1/celsius_to_fahrenheit",
+  "/qr-1a1/kilograms_to_pounds",
+  "/qr-1a1/miles_to_kilometers",
+  "/qr-1a1/currency_weight_conversion",
+  "/qr-1a1/road_trip_cost",
+  "/qr-1a1/area_conversion",
+  "/qr-1a1/area_conversion_km_to_miles",
+  "/qr-1a1/medication_dosage",
+  "/qr-1a1/medication_volume",
+  "/qr-1a1/rectangle_area",
+  "/qr-1a1/rectangle_width",
+  "/qr-1a1/circle_area_radius",
+  "/qr-1a1/circle_area_diameter",
+  "/qr-1a1/cylinder_volume",
+  "/qr-6/population_density_skewness",
+  "/qr-6/skewed_frequency_tables",
+  "/qr-6/mean_median_skewness",
+  "/qr-6/salary_skewness",
+  "/qr-6/box_and_whisker_plots",
+  "/qr-6/iq_score_problem",
+  "/qr-6/z_score_probability",
+  "/qr-6/marble_probability",
+  "/qr-6/dice_probability",
+  "/qr-6/rain_probability",
+  "/qr-6/blood_type_probability",
+  "/qr-6/painter_preferences",
+  "/qr-6/food_allergy_test_problem",
+  "/qr-6/students_major_problem",
+  "/qr-6/snail_pace",
+  "/qr-6/co2_levels",
+
+
+
+
+
+
+
+
+];
+
+function prevProblem() {
+  const currentUrl = window.location.pathname;
+  const currentIndex = problemUrls.indexOf(currentUrl);
+  if (currentIndex > 0) {
+    window.location.href = problemUrls[currentIndex - 1];
+  }
+}
+
+function nextProblem() {
+  const currentUrl = window.location.pathname;
+  const currentIndex = problemUrls.indexOf(currentUrl);
+  if (currentIndex < problemUrls.length - 1) {
+    window.location.href = problemUrls[currentIndex + 1];
+  }
+}
+</script>
+  
+</body>
+</html>

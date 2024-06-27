@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" id="MathJax-script" async></script>
+
+  <title>Math Problems</title>
+</head>
+<body>
+  <a href="/">Home</a>
+  <h1>Welcome to Math Problems!</h1>
+  <p>Select a math concept to practice:</p>
+  <ul>
+    <li><a href="/quantative_reasoning">Quantative Reasoning</a></li>
+    <li><a href="/prealgebra_2e">Pre-Algebra 2E, Openstax</a></li> 
+    <li><a href="/elementary_algebra_2e">Elementary Algebra 2E, Openstax</a></li> 
+    
+    <!-- Add more math concepts here as needed -->
+  </ul>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" id="MathJax-script" async></script>
+
+  <title>Math Problems</title>
+</head>
+<body>
+  <a href="/">Home</a>
+  <h1>Quantative Reasoning</h1>
+  <p>Select a math concept to practice:</p>
+  <ul>
+    <li><a href="{{ url_for('qr_1a1.sedans_ratio') }}">1A1: Sedans Ratio</a></li>
+    <li><a href="{{ url_for('qr_1a1.mixed_numbers_ratio') }}">1A1: Mixed Numbers Ratio</a></li>
+    <li><a href="{{ url_for('qr_1a1.whole_numbers_fraction_ratio') }}">1A1: Whole Numbers Fraction Ratio</a></li>
+    <li><a href="{{ url_for('qr_1a1.decimal_numbers_fraction_ratio') }}">1A1: Decimal Numbers Fraction Ratio</a></li>
+    <li><a href="{{ url_for('qr_1a1.proportion_using_cpi') }}">1B3: Proportion Using CPI</a></li>
+    <li><a href="{{ url_for('qr_1a1.proportion_using_rates') }}">1B3: Proportion Using Rates</a></li>
+    <li><a href="{{ url_for('qr_1a1.proportion_rates_per_100k') }}">1B3: Proportion Rates Per 100K</a></li>
+    <li><a href="{{ url_for('qr_1a1.proportional_comparison') }}">1B3: Proportion Comparison</a></li>
+    <li><a href="{{ url_for('qr_1a1.mean_shark_attacks') }}">2B.1: Descriptive Statistics, Mean</a></li>
+    <li><a href="{{ url_for('qr_1a1.mode_president_ages') }}">2B.1: Descriptive Statistics, Mode</a></li>
+    <li><a href="{{ url_for('qr_1a1.median_worm_length') }}">2B.1: Descriptive Statistics, Median</a></li>
+    <li><a href="{{ url_for('qr_1a1.weighted_averages_gpa_calculation') }}">2B.2: Weighted Averages, GPA</a></li>
+    <li><a href="{{ url_for('qr_1a1.weighted_average_salary') }}">2B.2: Weighted Averages, Salary</a></li>    
+    <li><a href="{{ url_for('qr_1a1.weighted_average_salary') }}">2B.2: Weighted Averages, Salary</a></li>    
+    <li><a href="{{ url_for('qr_1a1.weighted_average_items') }}">2B.2: Weighted Averages, Items</a></li>
+    <li><a href="{{ url_for('qr_1a1.weighted_average_grades') }}">2B.2: Weighted Averages, Grades</a></li>
+    <li><a href="{{ url_for('qr_1a1.relative_change_watch') }}">2B.3: Relative Change, Watches</a></li>
+    <li><a href="{{ url_for('qr_1a1.absolute_change_screen_time') }}">2B.3: Absolute Change, Screen Time</a></li>
+    <li><a href="{{ url_for('qr_1a1.percent_change_salary') }}">2B.3: Percent Increase, Salary</a></li>
+    <li><a href="{{ url_for('qr_1a1.percent_change_initial_price') }}">2B.3: Percent Decrease, Initial Price</a></li>
+    <li><a href="{{ url_for('qr_1a1.percent_change_profit') }}">2B.3: Percent Change, Interpretation - Profit</a></li>
+    <li><a href="{{ url_for('qr_1a1.slope_population_change') }}">3A.1: Slope - Population Change</a></li>
+    <li><a href="{{ url_for('qr_1a1.slope_saving_rate') }}">3A.1: Slope - Saving Rate</a></li>
+    <li><a href="{{ url_for('qr_1a1.slope_identify_y_intercept') }}">3A.3: Identify Slope, y intercept</a></li>
+    <li><a href="{{ url_for('qr_1a1.slope_identify_m_temp_increase') }}">3A.3: Identify Slope, Temperature Increase, Jones Family</a></li>
+    <li><a href="{{ url_for('qr_1a1.slope_indentify_m_linear_model') }}">3A.3: Identify Slope, find m in linear model</a></li>
+    <li><a href="{{ url_for('qr_1a1.linear_model_doughnuts_cost_model') }}">3B.1: Linear Models, Doughnuts Cost Model</a></li>
+    <li><a href="{{ url_for('qr_1a1.non_exponential_functions') }}">3B.2: Identify Non-Exponential Functions</a></li>
+    <li><a href="{{ url_for('qr_1a1.exponential_model_melatonin_decay') }}">3B.2: Exponetial Models - Predict Values, Melatonin Decay</a></li>
+    <li><a href="{{ url_for('qr_1a1.simple_interest') }}">5A.1: Simple Interest</a></li>
+    <li><a href="{{ url_for('qr_1a1.simple_interest_rate') }}">5A.1: Calculate the Annual Rate of Simple Interest</a></li>
+    <li><a href="{{ url_for('qr_1a1.simple_interest_deposit') }}">5A.1: Simple Interest Deposit</a></li>
+    <li><a href="{{ url_for('qr_1a1.compound_interest_deposit') }}">5A.2: Compound Interest Deposit</a></li></a></li>
+    <li><a href="{{ url_for('qr_1a1.compound_interest_random') }}">5A.2: Compound Interest with Random Compounding per Year</a></li>
+    <li><a href="{{ url_for('qr_1a1.credit_card_interest') }}">5A.3: Credit Card and Interest</a></li>
+    <li><a href="{{ url_for('qr_1a1.credit_card_table') }}">5A.4: Credit Card Table</a></li>
+    <li><a href="{{ url_for('qr_1a1.total_interest_paid') }}">5B.1 Total Interest Paid on a Mortgage</a></li>
+    <li><a href="{{ url_for('qr_1a1.compare_mortgages') }}">5B.1: Compare Mortgages</a></li>
+    <li><a href="{{ url_for('qr_1a1.first_payment_balance_reduction') }}">5B.1: Mortgage Balance Reduction</a></li>
+    <li><a href="{{ url_for('qr_1a1.monthly_payment') }}">5B.1: Understanding Loans, Mortgage with Excel</a></li>
+    <li><a href="{{ url_for('qr_1a1.mortgage_payment_table') }}">5B.2: Mortgage Payment with Table</a></li>
+    <li><a href="{{ url_for('qr_1a1.liters_in_quarts') }}">6A.1: Conversions, Liters to Quarts</a></li>
+    <li><a href="{{ url_for('qr_1a1.kilometers_to_miles') }}">6A.1: Conversions, Distance, Kilometers to Miles</a></li>
+    <li><a href="{{ url_for('qr_1a1.fahrenheit_to_celsius') }}">6A.1: Conversions, Temperature, Fahrenheit to Celsius</a></li>
+    <li><a href="{{ url_for('qr_1a1.pounds_to_kilograms') }}">6A.1: Conversions, Mass, Pounds to Kilograms</a></li>
+    <li><a href="{{ url_for('qr_1a1.meters_to_feet') }}">6A.1: Conversions, Height, Meters to Feet</a></li>
+    <li><a href="{{ url_for('qr_1a1.thermometer_temp_conversion') }}">6A.1: Fahrenheit to Celsius</a></li>
+    <li><a href="{{ url_for('qr_1a1.celsius_to_fahrenheit') }}">6A.1: Freezing Point of Methanol</a></li>
+    <li><a href="{{ url_for('qr_1a1.kilograms_to_pounds') }}">6A.2: Conversions, Kilograms to Pounds</a></li>
+    <li><a href="{{ url_for('qr_1a1.miles_to_kilometers') }}">6A.2: Conversions, Miles to Kilometers</a></li>
+    <li><a href="{{ url_for('qr_1a1.currency_weight_conversion') }}">6A.2: Conversions, Weight and Currency</a></li>
+    <li><a href="{{ url_for('qr_1a1.area_conversion') }}">6A.2: Area Conversion: Square Inches to Square Feet</a></li>
+    <li><a href="{{ url_for('qr_1a1.area_conversion_km_to_miles') }}">6A.2: Area Conversion: Square Kilometers to Square Miles</a></li>
+    <li><a href="{{ url_for('qr_1a1.medication_dosage') }}">6A.3: Conversion: Medication Dosage</a></li>
+    <li><a href="{{ url_for('qr_1a1.medication_volume') }}">6A.3: Medication Volume</a></li>
+    <li><a href="{{ url_for('qr_1a1.rectangle_area') }}">6A.4: Area, Perimeter - Rectangle Area</a></li>
+    <li><a href="{{ url_for('qr_1a1.rectangle_width') }}">6A.4: Rectangle Width</a></li>
+    <li><a href="{{ url_for('qr_1a1.circle_area_radius') }}">6A.4: Circle Area</a></li>
+    <li><a href="{{ url_for('qr_1a1.circle_area_diameter') }}">6A.4: Circle Area</a></li>
+    <li><a href="{{ url_for('qr_1a1.cylinder_volume') }}">6A.4: Volume of a Cylinder</a></li>
+    <li><a href="{{ url_for('qr_6.population_density_skewness') }}">6B.1: Normal Distribution, Skew</a></li>
+    <li><a href="{{ url_for('qr_6.skewed_frequency_tables') }}">6B.1: Analyzing Skewed Frequency Tables</a></li>
+    <li><a href="{{ url_for('qr_6.mean_median_skewness') }}">6B.1: Mean, Median and Skewness</a></li>
+    <li><a href="{{ url_for('qr_6.salary_skewness') }}">6B.1: Salary Distribution and Skewness</a></li>
+    <li><a href="{{ url_for('qr_6.box_and_whisker_plots') }}">6B.1: Box and Whisker Plots</a></li>
+    <li><a href="{{ url_for('qr_6.iq_score_problem') }}">6x.x IQ Score Problem</a></li>
+    <li><a href="{{ url_for('qr_6.z_score_probability') }}">6x.x Z-Score Probability</a></li>
+    <li><a href="{{ url_for('qr_6.marble_probability') }}">6x.x Marble Probability</a></li>
+    <li><a href="{{ url_for('qr_6.dice_probability') }}">6x.x Dice Probability</a></li>
+    <li><a href="{{ url_for('qr_6.rain_probability') }}">6x.x Rain Probability</a></li>
+    <li><a href="{{ url_for('qr_6.blood_type_probability') }}">6x.x Blood Type Probability</a></li>
+    <li><a href="{{ url_for('qr_6.painter_preferences') }}">6x.x Painter Preferences</a></li>
+    <li><a href="{{ url_for('qr_6.food_allergy_test_problem') }}">6x.x Food Allergy Test Problem</a></li>
+    <li><a href="{{ url_for('qr_6.students_major_problem') }}">6x.x Students Major Problem</a></li>
+    <li><a href="{{ url_for('qr_6.snail_pace') }}">6.x.x Empirical Rule, Snail Pace Problem</a></li>
+    <li><a href="{{ url_for('qr_6.co2_levels') }}">6.x.x CO2 Levels Problem</a></li>
+
+
+
+
+    <!-- Add more math concepts here as needed -->
+  </ul>
+</body>
+</html>

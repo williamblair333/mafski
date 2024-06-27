@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" id="MathJax-script" async></script>
+
+  <title>Math Problems</title>
+</head>
+<body>
+  <a href="/">Home</a>
+  <h1>Pre-Algebra 2e</h1>
+  <p>Select a math concept to practice:</p>
+  <ul>
+    <li><a href="{{ url_for('prealgebra_2e.translate_algebra') }}">Ch. 2, Algebra Introduction</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.identify_expression_equation') }}">Ch. 2, Identify expression or equation</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.write_exponential_expanded') }}">Ch. 2, Write in Exponential and Expanded Form</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.evaluate_expressions') }}">Ch. 2, Evaluate Expressions</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.evaluate_expression') }}">Ch. 2, Evaluate Expression</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.simplify_expression') }}">Ch. 2, Simplify by Combining Like Terms</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_equation') }}">Ch. 2, Solving Simple Equations</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.translate_solve') }}">Ch. 2, Translate English sentences into algebraic equations and solve</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.list_multiples') }}">Ch. 2, List multiples of a number</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_factors') }}">Ch. 2, Find factors of a number</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.locate_on_number_line') }}">Ch. 3, Locate and Label Numbers on a Number Line</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.compare_numbers') }}">Ch. 3, Compare numbers using greater/less/equal sign</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_opposite') }}">Ch. 3, Opposite of a number</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.simplify_expressions') }}">Ch. 3, Simplify Expressions</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.evaluate_expressions2') }}">Ch. 3, Evaluate Complex Expressions</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.translate_and_simplify') }}">Ch. 3, Translate and Simplify Phrases</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_contextual_problems') }}">Ch. 3, Solve Contextual Problems</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_linear_equations') }}">Ch. 3, Solve Linear Equations</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.translate_solve_integers') }}">Ch. 3, Translate and Solve</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.fraction_conversion') }}">Ch. 4, Convert Proper, Inproper Fractions</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.locate_fraction_numbers') }}">Ch. 4, Locate Fractions on a Number Line</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.fraction_operations') }}">Ch. 4, Simplify and Operate on Fractions</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.evaluate_random_fraction_expression') }}">Ch. 4, Evaluate Fraction Expressions</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_fraction_equation') }}">Ch. 4, Solving Fraction Equations, Random Variables and Values</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.convert_whole_and_thousandths_to_decimal') }}">Ch. 5, Decimals - Write a number and thousandths as a decimal</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.convert_decimal_to_fraction') }}">Ch. 5, Decimals - Write a decimal as a fraction</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.convert_fraction_to_decimal') }}">Ch. 5, Decimals - Write a fraction as a decimal</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.round_decimal') }}">Ch. 5, Decimals - Round a decimal to the nearest tenth, hundredth, and whole number</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.sort_mixed_numbers') }}">Ch. 5, Decimals - Sort a list of mixed numbers</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.simplify_decimal_expressions') }}">Ch. 5, Simplify Decimal Expressions</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.decimal_addition') }}">Ch. 5, Decimal Addition</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.decimal_subtraction') }}">Ch. 5, Decimal Subtraction</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.decimal_multiplication') }}">Ch. 5, Decimal Multiplication</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.decimal_division') }}">Ch. 5, Decimal Division</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.decimal_power') }}">Ch. 5, Decimal Power</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.decimal_parentheses_add_subtract_multiply') }}">Ch. 5, Decimal Parentheses Add Subtract Multiply</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.decimal_parentheses_add_subtract_divide') }}">Ch. 5, Decimal Parentheses Add Subtract Divide</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_simple_equation_add') }}">Ch. 5, Solve Simple Equation with Addition</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_simple_equation_divide') }}">Ch. 5, Solve Simple Equation with Division</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_simple_equation_multiply') }}">Ch. 5, Solve Simple Equation with Multiplication</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_simple_equation_subtract') }}">Ch. 5, Solve Simple Equation with Subtraction</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.split_bill') }}">Ch. 5, Split the Bill Evenly</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_circle_circumference_area') }}">Ch. 5, Find the Circumference and Area of a Circle</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.calculate_mean_median_mode') }}">Ch. 5, Calculate Mean, Median, Mode</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.nurse_probability') }}">Ch. 5, Nurse Probability</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.better_buy') }}">Ch. 5, Better Buy</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.travel_time') }}">Ch. 5, Travel Time</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.sqrt_sum') }}">Ch. 5, Simplify sqrt 1</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.sqrt_n_square') }}">Ch. 5, Simplify sqrt 2</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.estimate_sqrt') }}">Ch. 5, Estimate sqrt54 to between two whole numbers</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.square_patio') }}">Ch. 5, Yanet wants a square patio in her backyard</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.percent_to_decimal_fraction') }}">Ch. 6, Percentages</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.fraction_to_percent') }}">Ch. 6, Percentages</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.percent_problem_2') }}">Ch. 6, Percentages - Solve the percent problem</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.simplify_mult_div') }}">Ch. 7, Real Numbers, Simplify Mult Div</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.simplify_add_sub') }}">Ch. 7, Simplify Add Sub</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.simplify_distribution') }}">Ch. 7, Simplify Distribution</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.simplify_complex_expression') }}">Ch. 7, Simplify Complex Expression</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.unit_conversion') }}">Ch. 7, Unit Conversions</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.check_solution_linear') }}">Ch. 8, Linear Equations</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_linear_equation') }}">Ch. 8,  Solving Linear Equations 1</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.difference_equation') }}">Ch. 8,  Solving Linear Equations 2</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.gas_payment') }}">Ch. 8,  Solving Linear Equations 3, Word Problems</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.hike_people') }}">Ch. 9, People on a Hike</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.sum_twice_number') }}">Ch. 9, Sum and Twice a Number</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.two_number_sum') }}">Ch. 9, Two Numbers and their Sum</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.dimes_and_quarters') }}">Ch. 9, Dimes and Quarters</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.tickets_sold') }}">Ch. 9, Tickets Sold</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.angle_complement') }}">Ch. 9, Angle Complement</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.triangle_angles') }}">Ch. 9, Triangle Angles</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.equilateral_triangle') }}">Ch. 9, Equilateral Triangle</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.similar_triangles') }}">Ch. 9, Find Missing Triangle Side</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.right_triangle_missing_side_1') }}">Ch. 9, Right Triangle Missing Side 1</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.baseball_diamond_diagonal') }}">Ch. 9, Math Models and Geometry</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_rectangle_dimensions') }}">Ch. 9, Math Models and Geometry</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_triangle_area') }}">Ch. 9, Math Models and Geometry</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_trapezoid_area') }}">Ch. 9, Math Models and Geometry</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_pool_circumference') }}">Ch. 9, Math Models and Geometry</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_shaded_area') }}">Ch. 9, Math Models and Geometry</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.coffee_can_cylinder') }}">Ch. 9, Problem 488: Cylinder Properties</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.traffic_cone_volume') }}">Ch. 9, Find the volume of a traffic cone</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.distance_driven') }}">Ch. 9, Problem 490: Distance Driven</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.speed_of_boat') }}">Ch. 9, Problem 491: Speed of Boat</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_principal') }}">Ch. 9, Use the formula I=Prt to solve for the principal, P</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_formula_for_h') }}">Ch. 9, Math Models and Geometry</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_for_y') }}">Ch. 9, Solve for y</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.polynomial_properties') }}">Ch. 10, Polynomial Properties</a></li>
+    
+    <li><a href="{{ url_for('prealgebra_2e.polynomial_operations') }}">Ch. 10, Polynomial Operations</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.factor_gcf') }}">Ch. 10, Factor the GCF</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.scientific_notation') }}">Ch. 10, Write in Scientific Notation</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.decimal_form') }}">Ch. 10, Convert to Decimal Form</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.multiply_scientific_notation') }}">Ch. 10, Scientific Notation, Multiplication</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.divide_scientific_notation') }}">Ch. 10, Scientific Notation, Division</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_height') }}">Ch. 10, Find Height</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.plot_and_label_points') }}">Ch. 11, Graphs, Plot and Label Points</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.name_ordered_pairs') }}">Ch. 11, Graphs, Name the ordered pairs for each point shown</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_intercepts') }}">Ch. 11, Graphs, Find x,y </a></li>
+    <li><a href="{{ url_for('prealgebra_2e.solve_intercepts') }}">Ch. 11, Graphs, Find x,y intercept of equations</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.check_point_solution') }}">Ch. 11,  Polynomials, Check if a point is a solution to an equation</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.complete_table') }}">Ch. 11, Graphs, Complete a table to find solutions to an equation</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.complete_table_for_equation') }}">Ch. 11, Polynomials, Complete the table to find three solutions to the equation</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_three_solutions_and_graph') }}">Ch. 11, Polynomials, Find three solutions to each equation and then graph each line</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_slope') }}">Ch. 11, Polynomials - Find the slope of the line</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_slope_given_points') }}">Ch. 11, Polynomials - Find the slope of the line given two points</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.find_slope_horizontal_line') }}">Ch. 11, Polynomials - Find the slope of a horizontal line</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.graph_line_with_slope') }}">Ch. 11, Polynomials: Graph the line passing through a point with a given slope</a></li>
+    <li><a href="{{ url_for('prealgebra_2e.bicycle_slope') }}">Ch. 11, Polynomials, A bicycle route climbs 20 feet for 1,000 feet of horizontal distance. What is the slope of the route?</a></li>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Add more math concepts here as needed -->
+  </ul>
+</body>
+</html>

@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - "8017:8080"
+    restart: always
+
+    volumes:
+      - ./app:/app:rw
+     
+    environment:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+    networks:
+      caddy:
+        ipv4_address: 172.16.0.17
+    
+networks:
+  caddy:
+    external: true

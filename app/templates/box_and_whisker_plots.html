@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Box and Whisker Plots</h1>
+<form method="POST">
+  <p>Select the box-and-whisker plots that show a skewed data set:</p>
+  {% for i in range(4) %}
+  <div>
+    <input type="checkbox" id="answer{{ i }}" name="answer" value="{{ i }}">
+    <label for="answer{{ i }}">
+      <img src="{{ url_for('static', filename=f'images/box_and_whisker_{i}.png') }}" alt="box_and_whisker_{{ i }}" width="200">
+    </label>
+  </div>
+  {% endfor %}
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}

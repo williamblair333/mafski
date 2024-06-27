@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" id="MathJax-script" async></script>
+  <title>Math Problems</title>
+</head>
+<body>
+  <a href="/">Home</a>
+
+  <div class="nav-arrows">
+  <a href="#" id="prevProblem" onclick="prevProblem()">&larr; Previous Problem</a>
+  <a href="#" id="nextProblem" onclick="nextProblem()">Next Problem &rarr;</a>
+  </div>
+
+  {% if 'box_and_whisker' in problem %}
+  <h1>Box-and-Whisker Plots Problem</h1>
+  <p>{{ problem|safe }}</p>
+{% else %}
+  <h1 id="notice">{{ notice|safe }}<br></h1>
+  <h1 id="problem">{{ problem|safe }}</h1>
+{% endif %}
+
+{% if 'number_line' in problem %}
+  <h1>Number Line Problem</h1>
+  <p>{{ problem['text']|safe }}</p>
+  <div>{{ problem['number_line'] | safe }}</div>
+{% else %}
+  <h1 id="problem">{{ problem['text']|safe }}</h1>
+{% endif %}
+
+{% if 'angle_complement' in problem %}
+  <h1>Angle Complement</h1>
+  <p>{{ problem['text']|safe }}</p>
+  <div>{{ problem['angle_complement'] | safe }}</div>
+{% else %}
+  <h1 id="problem">{{ problem['text']|safe }}</h1>
+{% endif %}
+
+
+
+  <button onclick="showAnswer()">Show Answer</button>
+  <button onclick="showExplanation()">Show Explanation</button>
+  <button onclick="window.location.reload();">Generate a new problem</button>
+  <div class="answer" id="answer" style="display:none;">{{ answer|safe }}</div>
+  <div class="explanation" id="explanation" style="display:none;">{{ explanation|safe }}</div>
+
+
+  <script>
+    function showAnswer() {
+      document.getElementById("answer").style.display = "block";
+    }
+    function showExplanation() {
+      document.getElementById("explanation").style.display = "block";
+    }
+  </script>
+  
+  <script>
+  const problemUrls = [
+  "/prealgebra_2e/translate_algebra",
+  "/prealgebra_2e/identify_expression_equation",
+  "/prealgebra_2e/write_exponential_expanded",
+  "/prealgebra_2e/evaluate_expressions",
+  "/prealgebra_2e/evaluate_expression",
+  "/prealgebra_2e/simplify_expression",
+  "/prealgebra_2e/solve_equation",
+  "/prealgebra_2e/translate_solve",
+  "/prealgebra_2e/list_multiples",
+  "/prealgebra_2e/find_factors",
+  "/prealgebra_2e/locate_on_number_line",
+  "/prealgebra_2e/compare_numbers",
+  "/prealgebra_2e/find_opposite",
+  "/prealgebra_2e/simplify_expressions",
+  "/prealgebra_2e/evaluate_expressions2",
+  "/prealgebra_2e/translate_and_simplify",
+  "/prealgebra_2e/solve_contextual_problems",
+  "/prealgebra_2e/solve_linear_equations",
+  "/prealgebra_2e/translate_solve_integers",
+  "/prealgebra_2e/fraction_conversion",
+  "/prealgebra_2e/locate_fraction_numbers",
+  "/prealgebra_2e/fraction_operations",
+  "/prealgebra_2e/evaluate_random_fraction_expression",
+  "/prealgebra_2e/solve_fraction_equation",
+  "/prealgebra_2e/convert_whole_and_thousandths_to_decimal",
+  "/prealgebra_2e/convert_decimal_to_fraction",
+  "/prealgebra_2e/convert_fraction_to_decimal",
+  "/prealgebra_2e/round_decimal",
+  "/prealgebra_2e/sort_mixed_numbers",
+  "/prealgebra_2e/simplify_decimal_expressions",
+  "/prealgebra_2e/decimal_addition",
+  "/prealgebra_2e/decimal_subtraction",
+  "/prealgebra_2e/decimal_multiplication",
+  "/prealgebra_2e/decimal_division",
+  "/prealgebra_2e/decimal_power",
+  "/prealgebra_2e/decimal_parentheses_add_subtract_multiply",
+  "/prealgebra_2e/decimal_parentheses_add_subtract_divide",
+  "/prealgebra_2e/solve_simple_equation_add",
+  "/prealgebra_2e/solve_simple_equation_divide",
+  "/prealgebra_2e/solve_simple_equation_multiply",
+  "/prealgebra_2e/solve_simple_equation_subtract",
+  "/prealgebra_2e/split_bill",
+  "/prealgebra_2e/find_circle_circumference_area",
+  "/prealgebra_2e/calculate_mean_median_mode",
+  "/prealgebra_2e/nurse_probability",
+  "/prealgebra_2e/better_buy",
+  "/prealgebra_2e/travel_time",
+  "/prealgebra_2e/sqrt_sum",
+  "/prealgebra_2e/sqrt_n_square",
+  "/prealgebra_2e/estimate_sqrt",
+  "/prealgebra_2e/square_patio",
+  "/prealgebra_2e/percent_to_decimal_fraction",
+  "/prealgebra_2e/fraction_to_percent",
+  "/prealgebra_2e/percent_problem_2",
+  "/prealgebra_2e/simplify_mult_div",
+  "/prealgebra_2e/simplify_add_sub",
+  "/prealgebra_2e/simplify_distribution",
+  "/prealgebra_2e/simplify_complex_expression",
+  "/prealgebra_2e/unit_conversion",
+  "/prealgebra_2e/check_solution_linear",
+  "/prealgebra_2e/solve_linear_equation",
+  "/prealgebra_2e/difference_equation",
+  "/prealgebra_2e/gas_payment",
+  "/prealgebra_2e/hike_people",
+  "/prealgebra_2e/sum_twice_number",
+  "/prealgebra_2e/two_number_sum",
+  "/prealgebra_2e/dimes_and_quarters",
+  "/prealgebra_2e/tickets_sold",
+  "/prealgebra_2e/angle_complement",
+  "/prealgebra_2e/triangle_angles",
+  "/prealgebra_2e/equilateral_triangle",
+  "/prealgebra_2e/similar_triangles",
+  "/prealgebra_2e/right_triangle_missing_side_1",
+  "/prealgebra_2e/baseball_diamond_diagonal",
+  "/prealgebra_2e/find_rectangle_dimensions",
+  "/prealgebra_2e/find_triangle_area",
+  "/prealgebra_2e/find_trapezoid_area",
+  "/prealgebra_2e/find_pool_circumference",
+  "/prealgebra_2e/find_shaded_area",
+  "/prealgebra_2e/coffee_can_cylinder",
+  "/prealgebra_2e/traffic_cone_volume",
+  "/prealgebra_2e/distance_driven",
+  "/prealgebra_2e/speed_of_boat",
+  "/prealgebra_2e/solve_principal",
+  "/prealgebra_2e/solve_formula_for_h",
+  "/prealgebra_2e/solve_for_y",
+  "/prealgebra_2e/polynomial_properties",
+  
+  "/prealgebra_2e/polynomial_operations",
+  "/prealgebra_2e/factor_gcf",
+  "/prealgebra_2e/scientific_notation",
+  "/prealgebra_2e/decimal_form",
+  "/prealgebra_2e/multiply_scientific_notation",
+  "/prealgebra_2e/divide_scientific_notation",
+  "/prealgebra_2e/find_height",
+  "/prealgebra_2e/plot_and_label_points",
+  "/prealgebra_2e/name_ordered_pairs",
+  "/prealgebra_2e/find_intercepts",
+  "/prealgebra_2e/solve_intercepts",
+  "/prealgebra_2e/check_point_solution",
+  "/prealgebra_2e/complete_table",
+  "/prealgebra_2e/complete_table_for_equation",
+  "/prealgebra_2e/find_three_solutions_and_graph",
+  "/prealgebra_2e/find_slope",
+  "/prealgebra_2e/find_slope_given_points",
+  "/prealgebra_2e/find_slope_horizontal_line",
+  "/prealgebra_2e/graph_line_with_slope",
+  "/prealgebra_2e/bicycle_slope"
+
+
+
+
+  
+
+
+
+  
+  
+
+
+  
+
+
+
+  
+
+  
+  
+
+
+
+
+
+
+
+];
+
+function prevProblem() {
+  const currentUrl = window.location.pathname;
+  const currentIndex = problemUrls.indexOf(currentUrl);
+  if (currentIndex > 0) {
+    window.location.href = problemUrls[currentIndex - 1];
+  }
+}
+
+function nextProblem() {
+  const currentUrl = window.location.pathname;
+  const currentIndex = problemUrls.indexOf(currentUrl);
+  if (currentIndex < problemUrls.length - 1) {
+    window.location.href = problemUrls[currentIndex + 1];
+  }
+}
+</script>
+  
+</body>
+</html>
