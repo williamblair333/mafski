@@ -15,6 +15,7 @@ docker network create \
   --subnet=172.16.0.0/24 \
   caddy
 ```
+Change the ports in docker-compose.yaml and in app.py to reflect which port you want to access.  The Anki deck is set to port 8017.
 
 # Image
 The software is functional although it's not really ready for mass distribution via Docker Hub or something like that.  Consider it functional yet still in the beta phase.  I will consider it ready for release when I can make it turnkey.
