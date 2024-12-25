@@ -9,6 +9,13 @@ import the decks you want to work in Anki. Anki has links to each problem. Click
 # Notes 
 You'll need to modify docker-compose.yml to reflect whichever network the container will use.  The anki program is currently hard coded to run the flashcard problems on 172.16.0.17.  I'm certain there's a better way but this was very easy to do.  
 
+```
+docker network create \
+  --driver bridge \
+  --subnet=172.16.0.0/24 \
+  caddy
+```
+
 # Image
 The software is functional although it's not really ready for mass distribution via Docker Hub or something like that.  Consider it functional yet still in the beta phase.  I will consider it ready for release when I can make it turnkey.
 
