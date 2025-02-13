@@ -1,5 +1,9 @@
 # Mafski
 
+![alt text][logo]
+
+[logo]: https://github.com/williamblair333/mafski/mafski_mascot.png "Mafski Mascot"
+
 A Flask based math training website built using Openstax math books.
 
 # Setup 
