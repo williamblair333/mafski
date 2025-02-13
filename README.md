@@ -2,7 +2,7 @@
 
 ![alt text][logo]
 
-[logo]: https://github.com/williamblair333/mafski/mafski_mascot.png "Mafski Mascot"
+[logo]: https://github.com/williamblair333/mafski/blob/main/mafski_mascot.png "Mafski Mascot"
 
 A Flask based math training website built using Openstax math books.
 
